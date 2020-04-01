@@ -1,6 +1,6 @@
-# Energy PLus Data
+# Energy Plus Data
 
-This folder contains the Energy Plus data for eight cities in the United States. These cities, contained in separate .csv files, include:
+This folder contains the Energy Plus data for eight cities in the United States. The data is essentially simulation data of reference supermarkets. These cities, contained in separate .csv files, include:
 
 - Albuquerque, New Mexico
 - Atlanta, Georgia
@@ -15,7 +15,7 @@ Each .csv has 52560 observations of 21 variables.
 
 ## Data Columns
 
-- `Date/Time"`                              
+- `Date/Time`                              
 - `Environment:Site Outdoor Air Drybulb Temperature [C](TimeStep)`
 - `Environment:Site Outdoor Air Wetbulb Temperature [C](TimeStep)`
 - `Electricity:Facility [J](TimeStep)` - the total electricity column in Joules
@@ -37,7 +37,11 @@ Each .csv has 52560 observations of 21 variables.
 - `Pumps::Electric Power [W](TimeStep)`
 - `Refrigeration::Electric Power [W](TimeStep)`
 
+## More information:
+
+- More information regarding these Energy Plus simulation datasets from the National Renewable Energy Laboratory (NREL) https://www.nrel.gov/docs/fy15osti/63796.pdf
+- Source of Energy Plus Simulation data https://openei.org/datasets/files/961/pub/COMMERCIAL_LOAD_DATA_E_PLUS_OUTPUT/
 
 ## Other:
 
-Included in this folder is also an Excel file that summarizes zone details for super market buildings.
+Included in this folder is an Excel file that summarizes zone details for super market buildings.
