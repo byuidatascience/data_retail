@@ -14,5 +14,3 @@ This folder contains the wrangled Energy Plus data that is joined with the TMY3 
 The wrangling primarily concerns removing unnecessary or redundant columns from the joined data and converting the units of measurement into kilowatts.
 
 ## Data Columns
-
-The following overview shows what columns of the joined data that we decided to keep and what we removed for this wrangled data. Explanations for the column meanings can be found in the README.md file in the `Energy_Plus_TMY3_Joined` folder of this repository.

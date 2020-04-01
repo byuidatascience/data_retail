@@ -18,8 +18,6 @@ Each .csv has 52560 observations of 21 variables.
 - `Date/Time`                              
 - `Environment:Site Outdoor Air Drybulb Temperature [C](TimeStep)`
 - `Environment:Site Outdoor Air Wetbulb Temperature [C](TimeStep)`
-
-### Joules
 - `Electricity:Facility [J](TimeStep)` - the total electricity column in Joules
 - `Heating:Electricity [J](TimeStep)`
 - `Cooling:Electricity [J](TimeStep)`
@@ -29,9 +27,7 @@ Each .csv has 52560 observations of 21 variables.
 - `Fans:Electricity [J](TimeStep)`
 - `Pumps:Electricity [J](TimeStep)`
 - `Refrigeration:Electricity [J](TimeStep)`
-
-### the previous Joules columns, converted into watts
-- `Power:Facility [W](TimeStep)` - the total electricity column in watts
+- `Power:Facility [W](TimeStep)` - the previous Joules columns, converted into watts; the total electricity column in watts
 - `Heating:Electric Power [W](TimeStep)`
 - `Cooling::Electric Power [W](TimeStep)`
 - `InteriorLights::Electric Power [W](TimeStep)`

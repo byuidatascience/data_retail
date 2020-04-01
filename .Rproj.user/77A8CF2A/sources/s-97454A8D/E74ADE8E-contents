@@ -1,0 +1,157 @@
+#j
+
+aj <- read_csv("Energy_Plus_data/Energy_Plus_TMY3_Joined/albuquerque_joined.csv")
+
+#w
+
+aw <- read_csv("Energy_Plus_data/Energy_Plus_TMY3_Wrangled/albuquerque_wrangled.csv")
+
+
+
+[29] "ETR (W/m^2)"
+Extraterrestrial radiation, also known as "top-of-atmosphere" irradiance, is the amount of global horizontal radiation that a location on Earth would receive if there was no atmosphere or clouds (i.e., in outer space). This number is used as the reference amount against which actual solar energy measurements are compared.                   	                            
+[30] "ETRN (W/m^2)"
+Extraterrestrial radiation Normal. Same as above but at an angle normal to the recorded plane.                                                
+[31] "GHI (W/m^2)"
+Global Horizontal Radiation — Also called Global Horizontal Irradiance; total solar radiation; the sum of Direct Normal Irradiance (DNI), Diffuse Horizontal Irradiance (DHI), and ground-reflected radiation; however, because ground-reflected radiation is usually insignificant compared to direct and diffuse, for all practical purposes global radiation is said to be the sum of direct and diffuse radiation only: GHI = DHI + DNI * cos (Z) Where Z is the solar zenith angle.                                  	
+[32] "GHI source"
+Seemingly inconsequential and ambiguous number as far as I can tell. All rows also appear to have the same value rendering it of even less use.                                                 
+[33] "GHI uncert (%)"
+Just an uncertainty for the GHI which is not necessary for our algorithm due to the original ghi just being directly more relevant.                                               
+[34] "DNI (W/m^2)"  	
+See GHI. This is already a calculation included in the GHI column but may make enough of a difference on its own due to its potential to be a large part of the GHI indicator so we will keep it.                                         	
+[35] "DNI source"                                                   
+We will remove. See GHI Source [32]
+[36] "DNI uncert (%)"                         	
+Dropped for same reason as GHI uncert [33]         	      
+[37] "DHI (W/m^2)" 	
+Keeping for same reason as DNI [34]                                          	
+[38] "DHI source"   	
+See previous “source” columns                                              
+[39] "DHI uncert (%)"  
+See previous “uncert” columns                                         	
+[40] "GH illum (lx)"	
+(Global Horizontal) Illuminance — Solar radiation in the visible region of the solar spectrum to which the human eye responds. This may or may not be necessary to keep but we will keep it for now.
+[41] "GH illum source"
+See previous “source” cols                                          	
+[42] "Global illum uncert (%)"     	
+See previous “uncert” cols                                          	                       
+[43] "DN illum (lx)"
+(Direct Normal) Illuminance — Solar radiation in the visible region of the solar spectrum to which the human eye responds. This may or may not be necessary to keep but we will keep it for now.                                                 
+[44] "DN illum source"         	
+See previous “source” cols                                          	                                  
+[45] "DN illum uncert (%)"                                       	
+See previous “uncert” cols                                          	
+[46] "DH illum (lx)"
+(Direct Horizontal) Illuminance — Solar radiation in the visible region of the solar spectrum to which the human eye responds. This may or may not be necessary to keep but we will keep it for now.                                                                                            
+[47] "DH illum source"   	
+See previous “source” cols                                          	                                                                          
+[48] "DH illum uncert (%)" 	
+See previous “uncert” cols                                          	                                                                      
+[49] "Zenith lum (cd/m^2)"	
+Regarding luminosity at sun’s zenith. This is in candelas per square meter. This is a likely candidate to remove but we will keep it for now.                                      
+[50] "Zenith lum source"	
+See previous “source” cols                                          	                                                                           
+[51] "Zenith lum uncert (%)"           	
+See previous “uncert” cols                                          	                                                            
+
+
+[52] "TotCld (tenths)"
+Total Cloud Amount — The fraction of the sky dome covered by clouds. This fraction is typically expressed either as tenths (1/10, ..., 10/10) or eighths (1/8, ..., 8/8). This could prove to be a useful parameter.                                 	
+[53] "TotCld source"
+See above for “source” and “uncert”.                                      	 
+[54] "TotCld uncert (code)"   	
+See above for “source” and “uncert”.                                      	                                    
+[55] "OpqCld (tenths)"      	
+See TotCld [52] but this deals with the portion of the sky covered with opaque clouds. Could also prove useful.                       	
+[56] "OpqCld source"       	
+See above for “source” and “uncert”.                                      	                                       
+[57] "OpqCld uncert (code)"             	                         
+See above for “source” and “uncert”.                                      	 
+[58] "Dry-bulb (C)"	
+Dry-bulb Temperature — Air temperature measured with a thermometer, similar to ambient temperature. The term "dry-bulb" distinguishes it from the wet-bulb temperature measured by a psychrometer to determine relative humidity.  Very useful.                               	
+[59] "Dry-bulb source"        	
+See above for “source” and “uncert”.                                      	                                                                          
+[60] "Dry-bulb uncert (code)"                                    	
+See above for “source” and “uncert”.                                      	                                       
+[61] "Dew-point (C)"   	
+Dewpoint — The temperature at which the water in the atmosphere will condense as drops on a surface. We will keep for now, but this will likely be unnecessary.
+[62] "Dew-point source"     	
+See above for “source” and “uncert”.                                      	                                                                            
+[63] "Dew-point uncert (code)"                                   	
+See above for “source” and “uncert”.                          	
+
+[64] "RHum (%)"                                                      
+Relative Humidity — The amount of water vapor in the air expressed as the ratio between the measured amount and the maximum possible amount (the saturation point at which water condenses as dew). This is likely very useful.
+[65] "RHum source"                                                  
+See above for “source” and “uncert”.                                      	                                       
+[66] "RHum uncert (code)"   	
+See above for “source” and “uncert”.                                      	                                                                            
+[67] "Pressure (mbar)"             	
+Atmospheric Pressure — The pressure (force per area) created by the weight of the atmosphere. At higher elevations, the atmospheric pressure is lower because there is less air (this may be mega or milli bar, but I’m inclined to say milli due to the lower-case m). This may prove completely unnecessary for our algorithm.
+[68] "Pressure source"                	    
+See above for “source” and “uncert”.                                      	                                                              
+[69] "Pressure uncert (code)"                                    	
+See above for “source” and “uncert”.                                      	                                       
+[70] "Wdir (degrees)"    	
+Wind direction. Probably not necessary but may hold some weight in niche cases. Keep for now.                                    	
+[71] "Wdir source"                                                  
+See above for “source” and “uncert”.                                      	                                       
+[72] "Wdir uncert (code)"                                        	
+See above for “source” and “uncert”.                                      	                                       
+[73] "Wspd (m/s)"         	
+Wind speed in meters per second. We will keep for now but this could be a drop.                                   	
+[74] "Wspd source"                                                  
+See above for “source” and “uncert”.                                      	                                       
+[75] "Wspd uncert (code)"                 	                       
+See above for “source” and “uncert”. 	
+
+[76] "Hvis (m)" 	
+Horizontal visibility (HVIS) is a primary index used for assessing air quality. Although satellite images provide information regarding atmospheric aerosols, atmospheric visibility is not directly measured. This would be one of the first columns that I would drop but a lot of these columns may come together and build a bigger picture for our algorithm so I will leave it for now.                                                
+[77] "Hvis source"                                                  
+See above for “source” and “uncert”.                                      	                                       
+[78] "Hvis uncert (code)"                                        	
+See above for “source” and “uncert”.                                      	                                       
+[79] "CeilHgt (m)"	        
+In aviation, ceiling is a measurement of the height of the base of the lowest clouds (not to be confused with cloud base which has a specific definition) that cover more than half of the sky (more than 4 oktas) relative to the ground. Probably not necessary but we’ll keep for now.                                   	
+[80] "CeilHgt source"              	
+See above for “source” and “uncert”.                                      	                                                                     
+[81] "CeilHgt uncert (code)"                                     	
+See above for “source” and “uncert”.                                      	                                       
+[82] "Pwat (cm)" 	
+Precipitable Water — The amount of water in a vertical column of atmosphere. The unit of measure is typically the depth to which the water would fill the vertical column if it were condensed to a liquid. For example, 6 centimeters of precipitable water (in the absence of clouds) indicates a very moist atmosphere. Precipitable water is often used as a synonym for water vapor. I think this is a great value to have. 	
+[83] "Pwat source"                                                  
+See above for “source” and “uncert”.                                      	                                       
+[84] "Pwat uncert (code)"                                        	
+See above for “source” and “uncert”.                                      	                                       
+[85] "AOD (unitless)"
+Optical Depth — (Technically known as the relative aerosol optical depth) usually considered to be synonymous with the airmass, is the approximate number of aerosols in a path through the atmosphere relative to the standard number of aerosols in a vertical path through a clean, dry atmosphere at sea level. Could be useful especially in different climates.                       
+[86] "AOD source"                       	                        
+See above for “source” and “uncert”.                                      	                                       
+[87] "AOD uncert (code)"                                         	
+See above for “source” and “uncert”.                                      	                                       
+[88] "Alb (unitless)"  	
+Albedo — The fraction of solar radiation that is reflected. The solar energy community defines albedo as the fraction of solar radiation that is reflected from the ground, ground cover, and bodies of water on the surface of the earth. Astronomers and meteorologists include reflectance by clouds and air. To reduce confusion, some solar researchers use the term ground reflectance. Could be relatively useful.      	                            
+[89] "Alb source"                                                   
+See above for “source” and “uncert”.                                      	                                       
+[90] "Alb uncert (code)"                                         	
+See above for “source” and “uncert”.                                      	                                       
+[91] "Lprecip depth (mm)"    	
+Level of precipitation? I’m not sure but this would make sense. Could play a role.                           	
+[92] "Lprecip quantity (hr)"    	
+Unsure how this is measured but it is the same value through the whole column so we will remove it because it will not help us in predictions.                                
+[93] "Lprecip source"                                         	
+See above for “source” and “uncert”.                                      	                                          
+[94] "Lprecip uncert (code)"                                     	
+See above for “source” and “uncert”.                                      	                                       
+[95] "PresWth (METAR code)"  
+This has something to do with the time of observation at an airport. Given that we have the time of each value then it is unlikely that we will need this.                                   	
+[96] "PresWth source"                                               
+See above for “source” and “uncert”.                                      	                                       
+[97] "PresWth uncert (code)" 
+See above for “source” and “uncert”.                                      	                                       
+
+
+Helpful Resources:
+  https://power.larc.nasa.gov/publications/SolarSpectrum2000No2.pdf
+https://www.nrel.gov/grid/solar-resource/solar-glossary.html#e
