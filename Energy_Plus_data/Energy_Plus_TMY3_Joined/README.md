@@ -98,7 +98,7 @@ This folder contains the Energy Plus data joined with the TMY3 data found in the
 - [77] `Hvis (m)` - Horizontal visibility (primary index used for assessing air quality)
 - [78] `Hvis source`                                                   
 - [79] `Hvis uncert (code)`                                            
-- [80] `CeilHgt (m)` - Ceiling Height (measurement of the height of the base of the lowest clouds that cover more than half of the sky, more than 4 oktas, relative to the ground)                                   
+- [80] `CeilHgt (m)` - Ceiling height (measurement of the height of the base of the lowest clouds that cover more than half of the sky, more than 4 oktas, relative to the ground)                                   
 - [81] `CeilHgt source`                                                
 - [82] `CeilHgt uncert (code)`                                         
 - [83] `Pwat (cm)` - Precipitable water (amount of water in a vertical column of atmosphere)
