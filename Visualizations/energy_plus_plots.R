@@ -122,5 +122,4 @@ ggplot(STLep, aes(x = month, y = `Power:Facility [W](TimeStep)`)) +
   ggtitle("Total Facility Power by Month (Seattle, WA)") +
   theme(plot.title = element_text(hjust = 0.5)) +
   #theme(legend.position = "none")
-  #ggsave("seattle_energy_plus.png", width = 2.22, height = 1.72 , units = "in")
-  ggsave("seattle_energy_plus.png", limitsize = TRUE)
+  ggsave("seattle_energy_plus3.png", width = 2.22, height = 1.72 , units = "in")
