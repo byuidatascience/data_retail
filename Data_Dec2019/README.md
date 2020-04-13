@@ -1,12 +1,5 @@
 # data_retail
-
-
-###%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Vivian's Addition
-###%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    # This was some other information that I found at the start the search but We were give the Google sheets later and Brother Hathaway I think found a website or two for the rest of the information for the rest of the states, but feel free to look at it. All of this information would need to scraped and cleaned to what is needed.
-    Also we have this in the data science repo https://github.com/byuidatascience/data_walmart It's got some useful csv's
-      
+   
 ## Lists of other stores
       
   ### pdf of lots of target stores in the US
